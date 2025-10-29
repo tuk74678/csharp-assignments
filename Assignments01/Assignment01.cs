@@ -13,6 +13,9 @@ while (choice != 0)
     Console.WriteLine("1. Hacker Name Generator\n" +
                       "2. Practice Number Sizes and Range\n" +
                       "3. Convert Centuries into Days,Years, Hours...\n" +
+                      "4. Fizzbuzz\n" +
+                      "5. Code Execution\n" +
+                      "6. Guessing Number\n" + 
                       "0. Exit");
     Console.WriteLine("Please enter a number choice from the menu:");
     choice = int.Parse(Console.ReadLine());
@@ -42,7 +45,21 @@ while (choice != 0)
             Console.WriteLine("Please enter a number of centuries:");
             int centuries = int.Parse(Console.ReadLine());
             // Call calCenturies() to do calculation from UnderstandingType class
-            UnderstandingType.calCenturies(centuries);
+            UnderstandingType.CalCenturies(centuries);
+            Console.WriteLine(new string('*', 100)+ "\n");
+            break;
+        case 4:
+            UnderstandingType.Fizzbuzz();
+            Console.WriteLine(new string('*', 100)+ "\n");
+            break;
+        case 5:
+            UnderstandingType.CodeExecution();
+            Console.WriteLine(new string('*', 100)+ "\n");
+            break;
+        case 6:
+            Console.WriteLine("Please pick a number and I'll tell higher or lower: ");
+            int guessedNumber = int.Parse(Console.ReadLine());
+            UnderstandingType.GuessingNumber(guessedNumber);
             Console.WriteLine(new string('*', 100)+ "\n");
             break;
         case 0:

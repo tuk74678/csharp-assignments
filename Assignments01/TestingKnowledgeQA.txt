@@ -1,4 +1,5 @@
 ﻿1.Test your Knowledge
+
   1. What type would you choose for the following “numbers”?
       A person’s telephone number - String
       A person’s height - Float or Double
@@ -12,6 +13,7 @@
       The number of stars in the universe - Decimal
       The number of employees in each of the small or medium businesses in the
       United Kingdom (up to about 50,000 employees per business)    - Int
+      
   2. What are the difference between value type and reference type variables? What is
   boxing and unboxing?
       The different between value type and reference type are:
@@ -25,14 +27,64 @@
             
       - Boxing is an operation that coverts a value type into reference type (object type).
       - Unboxing is an operation that coverts a reference type into a value type.
+      
   3. What is meant by the terms managed resource and unmanaged resource in .NET?
       - Managed resource is organized by garbage collector.
       - Unmanaged resource is outside CLR control. It handles file, database connection etc. 
+      
   4. Whats the purpose of Garbage Collector in .NET?
       The purpose of Garbage Collector in .NET is to:
         - Prevent memory leak.
         - Free up memory from unused objects from heap.
         - Divide the heap memory into three different generations such as: generations: 0, 1 and 2.
         - and it runs automatically.
+        
+Test your Knowledge
+
+  1. What happens when you divide an int variable by 0?
+        Mathematically speaking, it is considered as undefined. However, it causes a runtime error in C# and crash the 
+        program unless it is handled by a try-catch exception.
+        
+  2. What happens when you divide a double variable by 0?
+        When dividing a double variable by 0, the program will not crash but will instead resulting in a +/- infinity
+        and NaN when both numerator and denominator are 0.
+        
+  3. What happens when you overflow an int variable, that is, set it to a value beyond its
+     range?
+        In this case if:
+        - Checked : an OverflowException is thrown.
+        - Unchecked: Integer overflow results in "wraparound" or "truncation".
+        
+  4. What is the difference between x = y++; and x = ++y;?
+        x = y++;
+        //this is post-increment, therefore if y = 1 then x = 1, y = 2
+        x = ++y;
+        //this is pre-increment, therefore if y = 1 then x = 2, y = 2
+         
+  5. What is the difference between break, continue, and return when used inside a loop
+     statement?
+        - break: exit the loop immediately.
+        - continue: skips the rest of the current iteration and goes to the next one.
+        - return: exit the entire method immediately.
+     
+  6. What are the three parts of a for statement and which of them are required?
+        for (initialization; condition; increment)
+        - initialization: runs at the beginning of the loop to set up a variable.
+        - condition: this is a test to check before each iteration.
+        - increment: this will run after each loop iteration to update the control variable
+  
+  7. What is the difference between the = and == operators?
+        = is an Assignment Operator. It sets a value to a variable.
+        == is an Equality Comparison Operator. It compares if two values are equal.
+  
+  8. Does the following statement compile? for ( ; true; ) ;
+        - Yes it does and it creates an infinite empty loop that does nothing.
+  
+  9. What does the underscore _ represent in a switch expression?
+        - It is called a default case which matches anything that did not match earlier.
+  
+  10. What interface must an object implement to be enumerated over by using the foreach
+      statement?      
+        - It must implement IEnumerable which allows object liek arrays to be iterated in a foreach loop.
         
   

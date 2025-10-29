@@ -2,6 +2,7 @@
 
 // Playing with console app
 
+using System.Runtime.InteropServices.Marshalling;
 using Assignments01;
 
 int choice = -1;
@@ -17,19 +18,20 @@ while (choice != 0)
                       "5. Code Execution\n" +
                       "6. Guessing Number\n" + 
                       "7. Print-a-Pyramid\n" +
+                      "8. Check How Many Days Old\n" +
                       "0. Exit");
-    Console.WriteLine("Please enter a number choice from the menu:");
+    Console.Write("Please enter a number choice from the menu: ");
     choice = int.Parse(Console.ReadLine());
     
     switch (choice)
     {
         case 1: //Playing with console app
             Console.WriteLine("\t****HACKER NAME GENERATOR!****");
-            Console.WriteLine("Please enter your favorite color: ");
+            Console.Write("Please enter your favorite color: ");
             String color = Console.ReadLine();
-            Console.WriteLine("Please enter your astrology sign: ");
+            Console.Write("Please enter your astrology sign: ");
             String sign = Console.ReadLine();
-            Console.WriteLine("Please enter your street address number: ");
+            Console.Write("Please enter your street address number: ");
             String adNum = Console.ReadLine();
             Console.WriteLine($"Woohoo! Your hacker name is {color}{sign}{adNum}");
             Console.WriteLine(new string('*', 100)+ "\n");
@@ -43,7 +45,7 @@ while (choice != 0)
             Console.WriteLine(new string('*', 100)+ "\n"); 
             break;
         case 3: // Centuries Converter
-            Console.WriteLine("Please enter a number of centuries:");
+            Console.Write("Please enter a number of centuries:");
             int centuries = int.Parse(Console.ReadLine());
             // Call calCenturies() to do calculation from UnderstandingType class
             UnderstandingType.CalCenturies(centuries);
@@ -58,7 +60,7 @@ while (choice != 0)
             Console.WriteLine(new string('*', 100)+ "\n");
             break;
         case 6:
-            Console.WriteLine("Please pick a number and I'll tell higher or lower: ");
+            Console.Write("Please pick a number and I'll tell higher or lower: ");
 
             int guessedNumber = 0;
             int correctNumber = new Random().Next(3) + 1;
@@ -67,11 +69,31 @@ while (choice != 0)
                 guessedNumber = int.Parse(Console.ReadLine());
                 UnderstandingType.GuessingNumber(guessedNumber, correctNumber); 
             }
-            
             Console.WriteLine(new string('*', 100)+ "\n");
             break;
         case 7: 
             UnderstandingType.PrintPyramid();
+            break;
+        case 8:
+            Console.Write("Please enter your birthday in MM/DD/YYYY: ");
+            DateTime birthday;
+            bool isValid = false;
+           
+            while (!isValid)
+            {
+                string bd = Console.ReadLine(); // read input each loop
+                isValid = DateTime.TryParse(bd, out birthday);
+                
+                if (isValid)
+                {
+                    UnderstandingType.CheckDaysOld(birthday);
+                }
+                else
+                {
+                    Console.Write("Your birthday is not in the correct format! Please try again: ");
+                }
+            }
+            Console.WriteLine(new string('*', 100)+ "\n");
             break;
         case 0:
             Environment.Exit(0);

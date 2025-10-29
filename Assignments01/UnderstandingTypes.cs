@@ -67,7 +67,6 @@ public class UnderstandingType{
                 Console.WriteLine(i);
             }
         }
-
     }
 
     // Check code executiom
@@ -82,7 +81,7 @@ public class UnderstandingType{
                 // Print a message when an overflow is about to occur
                 if (i == byte.MaxValue)
                 {
-                    Console.WriteLine("⚠️ Warning: byte overflow about to occur!");
+                    Console.WriteLine(" Warning: byte overflow about to occur!");
                 }
                 Console.WriteLine(i);
             }
@@ -107,7 +106,6 @@ public class UnderstandingType{
             {
                 Console.WriteLine("Congrats! You got the right number!");
             }
-
             return num;
     }
     
@@ -125,8 +123,22 @@ public class UnderstandingType{
             {
                 Console.Write("*");
             }
-            
             Console.WriteLine();
         }
+    }
+    
+    // Check how many days old
+    public static void CheckDaysOld(DateTime bd)
+    {
+      DateTime today = DateTime.Today;
+      
+      // Use TimeSpan to represent a time interval
+      TimeSpan difference = today - bd;
+      Console.WriteLine($"You are currently {difference.Days} days old!");
+      
+      // Calculate days until next anniversary
+      int daysToNextAnniversary = 10000 - (difference.Days % 10000);
+      DateTime nextAnniversary = today.AddDays(daysToNextAnniversary);
+      Console.WriteLine($"You have {daysToNextAnniversary} days until your 10,000th day!");
     }
 }

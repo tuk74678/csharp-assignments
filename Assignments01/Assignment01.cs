@@ -19,6 +19,7 @@ while (choice != 0)
                       "6. Guessing Number\n" + 
                       "7. Print-a-Pyramid\n" +
                       "8. Check How Many Days Old\n" +
+                      "9. Appropriate Greeting\n" +
                       "0. Exit");
     Console.Write("Please enter a number choice from the menu: ");
     choice = int.Parse(Console.ReadLine());
@@ -93,6 +94,10 @@ while (choice != 0)
                     Console.Write("Your birthday is not in the correct format! Please try again: ");
                 }
             }
+            Console.WriteLine(new string('*', 100)+ "\n");
+            break;
+        case 9:
+            UnderstandingType.GreetUser();
             Console.WriteLine(new string('*', 100)+ "\n");
             break;
         case 0:

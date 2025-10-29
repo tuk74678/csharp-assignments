@@ -130,15 +130,37 @@ public class UnderstandingType{
     // Check how many days old
     public static void CheckDaysOld(DateTime bd)
     {
-      DateTime today = DateTime.Today;
-      
-      // Use TimeSpan to represent a time interval
-      TimeSpan difference = today - bd;
-      Console.WriteLine($"You are currently {difference.Days} days old!");
-      
-      // Calculate days until next anniversary
-      int daysToNextAnniversary = 10000 - (difference.Days % 10000);
-      DateTime nextAnniversary = today.AddDays(daysToNextAnniversary);
-      Console.WriteLine($"You have {daysToNextAnniversary} days until your 10,000th day!");
+          DateTime today = DateTime.Today;
+          
+          // Use TimeSpan to represent a time interval
+          TimeSpan difference = today - bd;
+          Console.WriteLine($"You are currently {difference.Days} days old!");
+          
+          // Calculate days until next anniversary
+          int daysToNextAnniversary = 10000 - (difference.Days % 10000);
+          DateTime nextAnniversary = today.AddDays(daysToNextAnniversary);
+          Console.WriteLine($"You have {daysToNextAnniversary} days until your 10,000th day!");
+    }
+    // Greet user 
+    public static void GreetUser()
+    {
+        DateTime time = DateTime.Now;
+        //Console.WriteLine($"Now it is {time.Hour}:{time.Minute}");
+        if (time.Hour > 5 && time.Hour < 12)
+        {
+            Console.WriteLine("Good Morning");
+        }
+        else if (time.Hour > 12 && time.Hour < 17)
+        {
+            Console.WriteLine("Good Afternoon");   
+        }
+        else if (time.Hour > 17 && time.Hour < 21)
+        {
+            Console.WriteLine("Good Evening");
+        }
+        else
+        {
+            Console.WriteLine("Good Night");  
+        }
     }
 }

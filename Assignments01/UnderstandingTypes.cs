@@ -92,15 +92,15 @@ public class UnderstandingType{
     {
             if (num < 1 || num > 3)
             {
-                Console.WriteLine("Out of range numbers!");
+                Console.Write("Out of range numbers! Try again: ");
             }
             else if (num < correctNumber)
             {
-                Console.WriteLine("Higher!");
+                Console.Write("Higher, Try again: ");
             }
             else if (num > correctNumber)
             {
-                Console.WriteLine("Lower!");
+                Console.Write("Lower, Try again:");
             }
             else
             {

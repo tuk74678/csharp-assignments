@@ -28,4 +28,20 @@ public class UnderstandingType{
     {
         Console.WriteLine("{0,-10} {1,10} {2,25} {3,25}", type, bytes, min, max);
     }
+    // Create a calCenturies to do centuries calculation
+    public static void calCenturies(int centuries)
+    {
+        long years = centuries * 100;
+        long days = years * 365;
+        long hours = days * 24;
+        long minutes = hours * 60;
+        long seconds = minutes * 60;
+        long milliseconds = seconds * 1000;
+        long microseconds = milliseconds * 1000;
+        long nanoseconds = microseconds * 1000;
+        
+    Console.WriteLine($"{centuries} centuries is = {years} years = {days} days = {hours} hours \n{minutes} minutes = " +
+                      $"{seconds} seconds = {milliseconds} milliseconds \n{microseconds} microseconds = {nanoseconds} nanoseconds");    
+    }
+    
 }

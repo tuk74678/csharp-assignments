@@ -20,3 +20,13 @@ UnderstandingType.PrintHeader();
 // Call PrintInfo() to print all the data
 UnderstandingType.PrintInfo();
 Console.WriteLine(new string('*', 100)+ "\n");
+
+// Write program to enter an integer number of centuries and convert it to years, days, hours,
+// minutes, seconds, milliseconds, microseconds, nanoseconds. Use an appropriate data
+// type for every data conversion. Beware of overflows!
+
+Console.WriteLine("Please enter a number of centuries:");
+int centuries = int.Parse(Console.ReadLine());
+// Call calCenturies() to do calculation from UnderstandingType class
+UnderstandingType.calCenturies(centuries);
+Console.WriteLine(new string('*', 100)+ "\n");

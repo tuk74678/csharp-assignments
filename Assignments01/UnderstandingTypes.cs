@@ -163,4 +163,24 @@ public class UnderstandingType{
             Console.WriteLine("Good Night");  
         }
     }
+    // Counting number by 4 increments
+    public static void FourIncrements()
+    {
+        int numIncrements = 4;
+
+        for (int outer = 1; outer <= numIncrements; outer++)
+        {
+            for (int inner = 0; inner <= 24; inner += outer)
+            {
+                // print comma after each number until the last number
+                Console.Write(inner);
+                if (inner + outer <= 24)
+                {
+                    Console.Write(",");
+                }
+            }
+            Console.WriteLine();
+        }
+        
+    }
 }

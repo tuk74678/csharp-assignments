@@ -1,0 +1,38 @@
+﻿1.Test your Knowledge
+  1. What type would you choose for the following “numbers”?
+      A person’s telephone number - String
+      A person’s height - Float or Double
+      A person’s age - Int
+      A person’s gender (Male, Female, Prefer Not To Answer) - String or Enum
+      A person’s salary - Decimal
+      A book’s ISBN - String
+      A book’s price - Decimal    
+      A book’s shipping weight - Float or Double
+      A country’s population - Long
+      The number of stars in the universe - Decimal
+      The number of employees in each of the small or medium businesses in the
+      United Kingdom (up to about 50,000 employees per business)    - Int
+  2. What are the difference between value type and reference type variables? What is
+  boxing and unboxing?
+      The different between value type and reference type are:
+            - Value type stored in stack memory, but reference type stored in heap memory.
+            - Value type directly holds the value while reference type holds memory address or reference of the value
+            - Value type will not be collected by the garbage collector, but reference type will be collected by the
+              garbage collector.
+            - Value type will be created by struct or enum while reference type can be created by class, interface, 
+              delegate or array.
+            - Value type cannot accept any null value, but reference type can.
+            
+      - Boxing is an operation that coverts a value type into reference type (object type).
+      - Unboxing is an operation that coverts a reference type into a value type.
+  3. What is meant by the terms managed resource and unmanaged resource in .NET?
+      - Managed resource is organized by garbage collector.
+      - Unmanaged resource is outside CLR control. It handles file, database connection etc. 
+  4. Whats the purpose of Garbage Collector in .NET?
+      The purpose of Garbage Collector in .NET is to:
+        - Prevent memory leak.
+        - Free up memory from unused objects from heap.
+        - Divide the heap memory into three different generations such as: generations: 0, 1 and 2.
+        - and it runs automatically.
+        
+  

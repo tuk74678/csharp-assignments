@@ -88,11 +88,9 @@ public class UnderstandingType{
             }
         }
     }
-
-    public static void GuessingNumber(int num)
+    // Guess number exercise
+    public static int GuessingNumber(int num, int correctNumber)
     {
-        int correctNumber = new Random().Next(3) + 1;
-      
             if (num < 1 || num > 3)
             {
                 Console.WriteLine("Out of range numbers!");
@@ -109,5 +107,26 @@ public class UnderstandingType{
             {
                 Console.WriteLine("Congrats! You got the right number!");
             }
+
+            return num;
+    }
+    
+    // Print a pyramid
+    public static void PrintPyramid()
+    {
+        int totalLines = 5;
+        for (int i = 1; i <= totalLines; i++)
+        {
+            for (int space = totalLines - i; space > 0; space--)
+            {
+                Console.Write(" ");
+            }
+            for (int star = 1; star <= (2 * i) - 1; star++)
+            {
+                Console.Write("*");
+            }
+            
+            Console.WriteLine();
         }
+    }
 }

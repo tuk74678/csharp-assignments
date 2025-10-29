@@ -16,6 +16,7 @@ while (choice != 0)
                       "4. Fizzbuzz\n" +
                       "5. Code Execution\n" +
                       "6. Guessing Number\n" + 
+                      "7. Print-a-Pyramid\n" +
                       "0. Exit");
     Console.WriteLine("Please enter a number choice from the menu:");
     choice = int.Parse(Console.ReadLine());
@@ -58,9 +59,19 @@ while (choice != 0)
             break;
         case 6:
             Console.WriteLine("Please pick a number and I'll tell higher or lower: ");
-            int guessedNumber = int.Parse(Console.ReadLine());
-            UnderstandingType.GuessingNumber(guessedNumber);
+
+            int guessedNumber = 0;
+            int correctNumber = new Random().Next(3) + 1;
+            while (guessedNumber != correctNumber)
+            {
+                guessedNumber = int.Parse(Console.ReadLine());
+                UnderstandingType.GuessingNumber(guessedNumber, correctNumber); 
+            }
+            
             Console.WriteLine(new string('*', 100)+ "\n");
+            break;
+        case 7: 
+            UnderstandingType.PrintPyramid();
             break;
         case 0:
             Environment.Exit(0);

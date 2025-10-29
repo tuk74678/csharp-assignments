@@ -87,4 +87,15 @@ Test your Knowledge
       statement?      
         - It must implement IEnumerable which allows object liek arrays to be iterated in a foreach loop.
         
+    What will happen if this code executes?
+    int max = 500;
+    for (byte i = 0; i < max; i++)
+    {
+    WriteLine(i);
+    }
+    
+    Explanation: 
+        Once this code executes, the loop will keep looping over and over again because of the byte variable overflow 
+        back to 0 after reaching its max value at 255.
+        
   

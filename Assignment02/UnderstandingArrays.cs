@@ -160,8 +160,9 @@ public class UnderstandingArrays
         }
         return sum;
     }
-
-    public static void LongestSequence(String str)
+    
+    // Method to find the longest sequence
+    public static void FindLongestSequence(String str)
     {
         int[] array = Array.ConvertAll(str.Split(), int.Parse);
         int maxLen = 1,         // length of the longest sequence
@@ -193,6 +194,66 @@ public class UnderstandingArrays
             Console.Write(array[i] + " ");
         }
         Console.WriteLine();
+    }
+    
+    // Method to the find the most frequent number
+    public static void FindMostFrequent(String str)
+    {
+        int [] array = Array.ConvertAll(str.Split(), int.Parse);
+        int n = array.Length;
+        int[] unique = new int[n]; // store unique numbers
+        int[] count = new int[n];  // store counts
+        int uniqueCount = 0;
+
+        // count frequencies
+        for (int i = 0; i < n; i++)
+        {
+            int num = array[i];
+            int index = -1;
+
+            // check if num is already in unique array
+            for (int j = 0; j < uniqueCount; j++)
+            {
+                if (unique[j] == num)
+                {
+                    index = j;
+                    break;
+                }
+            }
+
+            if (index != -1)
+            {
+                // already exists → increment count
+                count[index]++;
+            }
+            else
+            {
+                // new number → add to unique and set count=1
+                unique[uniqueCount] = num;
+                count[uniqueCount] = 1;
+                uniqueCount++;
+            }
+        }
+
+        // find most frequent number
+        int maxCount = count[0];
+        int mostFreq = unique[0];
+
+        for (int i = 1; i < uniqueCount; i++)
+        {
+            if (count[i] > maxCount)
+            {
+                maxCount = count[i];
+                mostFreq = unique[i];
+            }
+        }
+        Console.WriteLine($"Most frequent: {mostFreq} (occurs {maxCount} times)");
+    }
+    
+    // Method to reverse string
+    public static void ReverseString()
+    {
+        
     }
     
 }

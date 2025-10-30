@@ -14,6 +14,8 @@ while (choice != 0)
                       "3. Calculate Prime Numbers\n" +
                       "4. Rotating Array\n" +
                       "5. Longest Sequence of Equal Elements\n" +
+                      "6. Most Frequent Number\n" +
+                      "7. Reverse String\n" +
                       "0. Exit");
     Console.Write("Please enter a number choice from the menu: ");
     choice = int.Parse(Console.ReadLine());
@@ -55,7 +57,22 @@ while (choice != 0)
             Console.WriteLine("\n\t****LONGEST SEQUENCE OF EQUAL ELEMENTS****");
             String sample = "2 1 1 2 3 3 2 2 2 1" ;
             Console.WriteLine("Sample Sequence: " + sample);
-            UnderstandingArrays.LongestSequence(sample);
+            UnderstandingArrays.FindLongestSequence(sample);
+            Console.WriteLine(new string('*', 100)+ "\n");
+            break;
+        case 6:
+            Console.WriteLine("\n\t****MOST FREQUENT NUMBERS****");
+            String sample1 = "4 1 1 4 2 3 4 4 1 2 4 9 3" ;
+            String sample2 = "7 7 7 0 2 2 2 0 10 10 10";
+            Console.WriteLine("Sample Sequence: " + sample1);
+            UnderstandingArrays.FindMostFrequent(sample1);
+            Console.WriteLine("Sample Sequence: " + sample2);
+            UnderstandingArrays.FindMostFrequent(sample2);
+            Console.WriteLine(new string('*', 100)+ "\n");
+            break;
+        case 7:
+            Console.WriteLine("\n\t****REVERSE STRING****");
+            
             Console.WriteLine(new string('*', 100)+ "\n");
             break;
         case 0:

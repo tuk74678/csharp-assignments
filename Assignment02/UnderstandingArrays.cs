@@ -437,6 +437,7 @@ public class UnderstandingArrays
         Console.WriteLine();
     }
 
+    // Method to parse url
     public static void ParseURL(string url)
     {
         string protocol = "", server = "", resource = "";

@@ -1,4 +1,6 @@
-﻿namespace Assignment02;
+﻿using System.Runtime.InteropServices.JavaScript;
+
+namespace Assignment02;
 
 public class UnderstandingArrays
 {
@@ -251,8 +253,23 @@ public class UnderstandingArrays
     }
     
     // Method to reverse string
-    public static void ReverseString()
+    public static void ReverseString(String rev)
     {
+        // Method 1
+        Char[] array1 = rev.ToCharArray();
+        Array.Reverse(array1);
+        String reversed = new String(array1);
+        Console.WriteLine("Method 1 : From char to string: " + reversed);
+        Console.WriteLine("------------------------------------------");
+        
+        // Method 2
+        Char[] array2 = rev.ToCharArray();
+        Console.Write("Method 2 : Using for loop: ");
+        for (int i = array2.Length - 1; i >= 0; i--)
+        {
+            Console.Write(array2[i] + "");    
+        }
+        Console.WriteLine();
         
     }
     

@@ -106,7 +106,8 @@ public class UnderstandingArrays
             Console.Write($"{i} ");
         }
     }
-
+    
+    // Method to find prime with user provided range
     public static int[] FindPrimesInRange(int startNum, int endNum)
     {
         int max = (endNum - startNum) + 1;
@@ -139,7 +140,8 @@ public class UnderstandingArrays
             result[i] = array[i];
         return result;
     }
-
+    
+    // Method to do array rotation via user input
     public static int[] RotatingArrays(String input, int time)
     {
         int[] array = Array.ConvertAll(input.Split(), int.Parse);
@@ -158,4 +160,39 @@ public class UnderstandingArrays
         }
         return sum;
     }
+
+    public static void LongestSequence(String str)
+    {
+        int[] array = Array.ConvertAll(str.Split(), int.Parse);
+        int maxLen = 1,         // length of the longest sequence
+            currentLen = 1,     // track where the sequence start
+            startIndex = 0;     // the actual sequence
+        
+        for (int i = 1; i < array.Length; i++)
+        {
+            if (array[i - 1] == array[i])
+            {
+                currentLen++;
+            }
+            else
+            {
+                currentLen = 1;
+            }
+            // if we found a long sequence
+            if (currentLen > maxLen)
+            {
+                // update the legnth of the longest sequence
+                maxLen = currentLen;
+                startIndex = i - maxLen + 1;
+            }
+            
+        }
+        Console.Write("The longest sequence is: ");
+        // now we find the start of the first longest sequence then print the output seperated by a space
+        for (int i = startIndex; i < startIndex + maxLen; i++){
+            Console.Write(array[i] + " ");
+        }
+        Console.WriteLine();
+    }
+    
 }

@@ -334,4 +334,134 @@ public class UnderstandingArrays
         Console.WriteLine("Reversed: " + result);
     }
     
+    // Method to extract palindrome
+    public static void ExtractPalindrome(String text)
+    {
+        // Define separators
+        char[] separators = { ' ', ',', '.', '!', '?', ';', ':' };
+
+        int n = text.Length;
+        string[] words = new string[n];        // max possible words
+        int wordCount = 0;
+        string currentWord = "";
+
+        // extract words manually
+        for (int i = 0; i < n; i++)
+        {
+            char c = text[i];
+            bool isSep = false;
+            for (int j = 0; j < separators.Length; j++)
+            {
+                if (c == separators[j])
+                {
+                    isSep = true;
+                    break;
+                }
+            }
+
+            if (isSep)
+            {
+                if (currentWord != "")
+                {
+                    words[wordCount++] = currentWord;
+                    currentWord = "";
+                }
+            }
+            else
+            {
+                currentWord += c;
+            }
+        }
+
+        if (currentWord != "")
+            words[wordCount++] = currentWord;
+
+        // find palindromes and store in array (avoid duplicates)
+        string[] palindromes = new string[wordCount];
+        int palindromeCount = 0;
+
+        for (int i = 0; i < wordCount; i++)
+        {
+            string w = words[i];
+            if (w.Length <= 1) continue;
+
+            string lower = w.ToLower();
+
+            bool isPalindrome = true;
+            for (int k = 0, l = lower.Length - 1; k < l; k++, l--)
+            {
+                if (lower[k] != lower[l])
+                {
+                    isPalindrome = false;
+                    break;
+                }
+            }
+
+            if (isPalindrome)
+            {
+                // check for duplicates
+                bool duplicate = false;
+                for (int d = 0; d < palindromeCount; d++)
+                {
+                    if (palindromes[d].Equals(w, StringComparison.OrdinalIgnoreCase))
+                    {
+                        duplicate = true;
+                        break;
+                    }
+                }
+                if (!duplicate)
+                    palindromes[palindromeCount++] = w;
+            }
+        }
+        // sort palindromes alphabetically (simple bubble sort)
+        for (int i = 0; i < palindromeCount - 1; i++)
+        {
+            for (int j = i + 1; j < palindromeCount; j++)
+            {
+                if (string.Compare(palindromes[i], palindromes[j], StringComparison.OrdinalIgnoreCase) > 0)
+                {
+                    string temp = palindromes[i];
+                    palindromes[i] = palindromes[j];
+                    palindromes[j] = temp;
+                }
+            }
+        }
+        Console.Write("After extracting palindromes: ");
+        // Step 4: print results
+        for (int i = 0; i < palindromeCount; i++)
+        {
+            Console.Write(palindromes[i]);
+            if (i < palindromeCount - 1)
+                Console.Write(", ");
+        }
+        Console.WriteLine();
+    }
+
+    public static void ParseURL(string url)
+    {
+        string protocol = "", server = "", resource = "";
+
+        int protoEnd = url.IndexOf("://");
+        if (protoEnd != -1)
+        {
+            protocol = url.Substring(0, protoEnd);
+            url = url.Substring(protoEnd + 3);
+        }
+
+        int resStart = url.IndexOf("/");
+        if (resStart != -1)
+        {
+            server = url.Substring(0, resStart);
+            resource = url.Substring(resStart + 1);
+        }
+        else
+        {
+            server = url;
+        }
+        Console.WriteLine($"[protocol] = \"{protocol}\"");
+        Console.WriteLine($"[server] = \"{server}\"");
+        Console.WriteLine($"[resource] = \"{resource}\"");
+        Console.WriteLine();
+    }
+    
 }

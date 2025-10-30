@@ -17,7 +17,8 @@ while (choice != 0)
                       "6. Most Frequent Number\n" +
                       "7. Reverse String\n" +
                       "8. Reverse Words in Sentence\n" +
-                      "9. \n" +
+                      "9. Extract Palindrome\n" +
+                      "10. Parsing URL\n" +
                       "0. Exit");
     Console.Write("Please enter a number choice from the menu: ");
     choice = int.Parse(Console.ReadLine());
@@ -108,6 +109,32 @@ while (choice != 0)
             Console.WriteLine();
             Console.Write("Sample: " + sentence1 + "\n");
             UnderstandingArrays.ReverseWordsInSentence(sentence1);
+            
+            Console.WriteLine(new string('*', 100)+ "\n");
+            break;
+        case 9:
+            Console.WriteLine("\n\t****EXTRACT PALINDROME****");
+
+            String palindrome = "Hi,exe? ABBA! Hog fully a string: ExE. Bob";
+            
+            Console.Write("Sample: " + palindrome + "\n");
+            UnderstandingArrays.ExtractPalindrome(palindrome);
+            Console.WriteLine(new string('*', 100)+ "\n");
+            break;
+        case 10:
+            Console.WriteLine("\n\t****PARSING URL****");
+
+            String url = "https://www.apple.com/iphone";
+            Console.Write("Sample URL: " + url + "\n");
+            UnderstandingArrays.ParseURL(url);
+            
+            String url1 = "ftp://www.example.com/employee";
+            Console.Write("Sample URL: " + url1 + "\n");
+            UnderstandingArrays.ParseURL(url1);
+            
+            String url2 = "https://google.com";
+            Console.Write("Sample URL: " + url2 + "\n");
+            UnderstandingArrays.ParseURL(url2);
             
             Console.WriteLine(new string('*', 100)+ "\n");
             break;

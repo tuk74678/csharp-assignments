@@ -146,15 +146,15 @@ public class UnderstandingType{
     {
         DateTime time = DateTime.Now;
         //Console.WriteLine($"Now it is {time.Hour}:{time.Minute}");
-        if (time.Hour > 5 && time.Hour < 12)
+        if (time.Hour >= 5 && time.Hour < 12)
         {
             Console.WriteLine("Good Morning");
         }
-        else if (time.Hour > 12 && time.Hour < 17)
+        else if (time.Hour >= 12 && time.Hour < 17)
         {
             Console.WriteLine("Good Afternoon");   
         }
-        else if (time.Hour > 17 && time.Hour < 21)
+        else if (time.Hour >= 17 && time.Hour < 21)
         {
             Console.WriteLine("Good Evening");
         }

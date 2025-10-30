@@ -106,4 +106,37 @@ public class UnderstandingArrays
             Console.Write($"{i} ");
         }
     }
+
+    public static int[] FindPrimesInRange(int startNum, int endNum)
+    {
+        int max = (endNum - startNum) + 1;
+        int[] array = new int[max];
+        int count = 0; // count how many prime we found
+        
+        for (int i = startNum; i <= endNum; i++)
+        {
+            // number that are less than 2 are not prime so we skip
+            if (i < 2) continue;
+            bool isPrime = true; ;
+            for (int j = 2; j * j <= i; j++)
+            {
+                if (i % j == 0)
+                {
+                    isPrime = false;
+                    break;
+                }
+            }
+            // count the prime number so we can initialize the array size to store the result
+            if (isPrime)
+            {
+                array[count] = i;
+                count++;
+            }
+        }
+        // return a trimmed array containing only the found primes
+        int[] result = new int[count];
+        for (int i = 0; i < count; i++)
+            result[i] = array[i];
+        return result;
+    }
 }

@@ -28,7 +28,7 @@ while (choice != 0)
     switch (choice)
     {
         case 1: //Playing with console app
-            Console.WriteLine("\t****HACKER NAME GENERATOR!****");
+            Console.WriteLine("\n\t****HACKER NAME GENERATOR!****");
             Console.Write("Please enter your favorite color: ");
             String color = Console.ReadLine();
             Console.Write("Please enter your astrology sign: ");
@@ -39,7 +39,7 @@ while (choice != 0)
             Console.WriteLine(new string('*', 100)+ "\n");
         break;
         case 2: // Practice number sizes and range
-            Console.WriteLine("\t****NUMBER SIZES AND RANGE!****");
+            Console.WriteLine("\n\t****NUMBER SIZES AND RANGE!****");
             // Call all methods from UnderstandingType class
             UnderstandingType.PrintHeader();
             // Call PrintInfo() to print all the data
@@ -47,7 +47,7 @@ while (choice != 0)
             Console.WriteLine(new string('*', 100)+ "\n"); 
             break;
         case 3: // Centuries Converter
-            Console.WriteLine("\t****CENTURIES CONVERTER****");
+            Console.WriteLine("\n\t****CENTURIES CONVERTER****");
             Console.Write("Please enter a number of centuries:");
             int centuries = int.Parse(Console.ReadLine());
             // Call calCenturies() to do calculation from UnderstandingType class
@@ -55,17 +55,17 @@ while (choice != 0)
             Console.WriteLine(new string('*', 100)+ "\n");
             break;
         case 4:
-            Console.WriteLine("\t****FIZZBUZZ****");
+            Console.WriteLine("\n\t****FIZZBUZZ****");
             UnderstandingType.Fizzbuzz();
             Console.WriteLine(new string('*', 100)+ "\n");
             break;
         case 5:
-            Console.WriteLine("\t****CODE EXECUTION****");
+            Console.WriteLine("\n\t****CODE EXECUTION****");
             UnderstandingType.CodeExecution();
             Console.WriteLine(new string('*', 100)+ "\n");
             break;
         case 6:
-            Console.WriteLine("\t****GUESSING NUMBER****");
+            Console.WriteLine("\n\t****GUESSING NUMBER****");
             Console.Write("Please pick a number and I'll tell higher or lower: ");
 
             int guessedNumber = 0;
@@ -78,11 +78,11 @@ while (choice != 0)
             Console.WriteLine(new string('*', 100)+ "\n");
             break;
         case 7: 
-            Console.WriteLine("\t****PRINT A PYRAMID");
+            Console.WriteLine("\n\t****PRINT A PYRAMID");
             UnderstandingType.PrintPyramid();
             break;
         case 8:
-            Console.WriteLine("\t****BIRTHDAY CHECKER****");
+            Console.WriteLine("\n\t****BIRTHDAY CHECKER****");
             Console.Write("Please enter your birthday in MM/DD/YYYY: ");
             DateTime birthday;
             bool isValid = false;
@@ -104,12 +104,12 @@ while (choice != 0)
             Console.WriteLine(new string('*', 100)+ "\n");
             break;
         case 9:
-            Console.WriteLine("\t****GREET USERS****");
+            Console.WriteLine("\n\t****GREET USERS****");
             UnderstandingType.GreetUser();
             Console.WriteLine(new string('*', 100)+ "\n");
             break;
         case 10:
-            Console.WriteLine("\t****4 INCREMENTS OF 24****");
+            Console.WriteLine("\n\t****4 INCREMENTS OF 24****");
             UnderstandingType.FourIncrements();
             Console.WriteLine(new string('*', 100)+ "\n");
             break;

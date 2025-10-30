@@ -10,6 +10,7 @@ while (choice != 0)
     Console.WriteLine("\t***WELCOME TO C# PRACTICE***");
     Console.WriteLine("1. Copying an Array\n" +
                       "2. To-Do List\n" +
+                      "3. Calculate Prime Numbers\n" +
                       "0. Exit");
     Console.Write("Please enter a number choice from the menu: ");
     choice = int.Parse(Console.ReadLine());
@@ -17,13 +18,24 @@ while (choice != 0)
     switch (choice)
     {
         case 1:
-            Console.WriteLine("\t****COPYING AN ARRAY****");
+            Console.WriteLine("\n\t****COPYING AN ARRAY****");
             UnderstandingArrays.CopyingArray();
             Console.WriteLine(new string('*', 100)+ "\n");
             break;
         case 2:
-            Console.WriteLine("\t****TO-DO LIST****");
+            Console.WriteLine("\n\t****TO-DO LIST****");
             UnderstandingArrays.ToDoList();
+            Console.WriteLine(new string('*', 100)+ "\n");
+            break;
+        case 3:
+            Console.WriteLine("\n\t****CALCULATE PRIME NUMBER****");
+            Console.Write("Please enter a start num: ");
+            int startNum = int.Parse(Console.ReadLine());
+            Console.Write("Please enter an end: ");
+            int endNum = int.Parse(Console.ReadLine());
+            int[] result = UnderstandingArrays.FindPrimesInRange(startNum, endNum);
+            // combine an array elements into one string for output
+            Console.WriteLine(string.Join(", ", result));
             Console.WriteLine(new string('*', 100)+ "\n");
             break;
         case 0:

@@ -139,4 +139,23 @@ public class UnderstandingArrays
             result[i] = array[i];
         return result;
     }
+
+    public static int[] RotatingArrays(String input, int time)
+    {
+        int[] array = Array.ConvertAll(input.Split(), int.Parse);
+        int n = array.Length;
+        int [] sum = new int[n];
+        
+        for (int r = 1; r <= time; r++)
+        {
+            int[] rotated = new int[n];
+            for (int i = 0; i < n; i++)
+                rotated[(i + r) % n] = array[i];
+    
+            // we need to add the rotated array after many times it rotated
+            for (int i = 0; i < n; i++)
+                sum[i] += rotated[i];
+        }
+        return sum;
+    }
 }

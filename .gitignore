@@ -1,5 +1,40 @@
+# Build results
 bin/
 obj/
+out/
+*.exe
+*.dll
+*.pdb
+*.cache
+*.log
+
+# NuGet packages
 /packages/
-riderModule.iml
+*.nupkg
+*.snupkg
+*.nuspec
+
+# JetBrains Rider / ReSharper
+.idea/
+*.sln.iml
+*.DotSettings.user
 /_ReSharper.Caches/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userprefs
+
+# Temporary / backup files
+*.tmp
+*.bak
+*.swp
+*.db
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Other
+riderModule.iml

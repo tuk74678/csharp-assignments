@@ -16,7 +16,8 @@ while (choice != 0)
                       "5. Longest Sequence of Equal Elements\n" +
                       "6. Most Frequent Number\n" +
                       "7. Reverse String\n" +
-                      "8. \n"
+                      "8. Reverse Words in Sentence\n" +
+                      "9. \n" +
                       "0. Exit");
     Console.Write("Please enter a number choice from the menu: ");
     choice = int.Parse(Console.ReadLine());
@@ -97,6 +98,18 @@ while (choice != 0)
             Console.WriteLine(new string('*', 100)+ "\n");
             break;
         case 8:
+            Console.WriteLine("\n\t****REVERSE WORD IN SENTENCE****");
+            
+            String sentence = "C# is not C++, and PHP is not Delphi!";
+            String sentence1 = "The quick brown fox jumps over the lazy dog /Yes! Really!!!/.";
+            
+            Console.Write("Sample: " + sentence + "\n");
+            UnderstandingArrays.ReverseWordsInSentence(sentence);
+            Console.WriteLine();
+            Console.Write("Sample: " + sentence1 + "\n");
+            UnderstandingArrays.ReverseWordsInSentence(sentence1);
+            
+            Console.WriteLine(new string('*', 100)+ "\n");
             break;
         case 0:
             Environment.Exit(0);

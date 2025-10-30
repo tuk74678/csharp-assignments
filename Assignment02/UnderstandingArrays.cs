@@ -272,5 +272,66 @@ public class UnderstandingArrays
         Console.WriteLine();
         
     }
+
+    // Method to reverse words in a sentence
+    public static void ReverseWordsInSentence(String sentence)
+    {
+        // Define separators
+        char[] separators = { '.', ',', ':', ';', '=', '(', ')', '&', '[', ']', '"', '\'', '\\', '/', '!', '?', ' ' };
+
+        int n = sentence.Length;
+        string[] words = new string[n];      // max possible words = length of sentence
+        string[] seps = new string[n];       // max possible separators = length of sentence
+        int wordCount = 0, sepCount = 0;
+        string currentWord = "";
+
+        // separate words and separators
+        for (int i = 0; i < n; i++)
+        {
+            char c = sentence[i];
+            bool isSep = false;
+            for (int j = 0; j < separators.Length; j++)
+            {
+                if (c == separators[j])
+                {
+                    isSep = true;
+                    break;
+                }
+            }
+            if (isSep)
+            {
+                if (currentWord != "")
+                {
+                    words[wordCount++] = currentWord;
+                    currentWord = "";
+                }
+                seps[sepCount++] = c.ToString();
+            }
+            else
+            {
+                currentWord += c;
+            }
+        }
+
+        if (currentWord != "")
+            words[wordCount++] = currentWord;
+
+        // reverse words array
+        for (int i = 0; i < wordCount / 2; i++)
+        {
+            string temp = words[i];
+            words[i] = words[wordCount - 1 - i];
+            words[wordCount - 1 - i] = temp;
+        }
+        // reconstruct sentence
+        string result = "";
+        int w = 0, s = 0;
+        while (s < sepCount)
+        {
+            result += words[w++];
+            result += seps[s++];
+        }
+        Console.WriteLine("Reversed: " + result);
+    }
     
 }

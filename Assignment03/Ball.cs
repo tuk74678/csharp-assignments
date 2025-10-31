@@ -12,4 +12,13 @@ public class Ball
         Color = color;
         _throwCount = 0;
     }
+    public void Pop() => Size = 0;
+
+    public void Throw()
+    {
+        if (Size > 0)
+            _throwCount++;
+    }
+
+    public int GetThrowCount() => _throwCount;
 }

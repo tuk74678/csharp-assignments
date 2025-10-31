@@ -34,7 +34,7 @@ Console.WriteLine("\n\t*****Object-Oriented Programming*****");
 
 
 // Create student
-var student = new Student();
+var student = new Student("Harry Potter", new DateTime(1982, 03, 15));
 
 // Create department
 var dept = new Department();

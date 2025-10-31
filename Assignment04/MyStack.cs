@@ -2,30 +2,44 @@
 
 public class MyStack<T>
 {
-    private T[] stack;          // create an array of stack
-    private int top = 0;        // index that points to the top of the element
+    private T[] stack;      // create an array of stack
+    private int top;        // index that points to the top of the element
 
-    public MyStack()
+    // Create a constructor
+    public MyStack(int  capacity)
     {
-        
+        stack = new T[capacity];
+        top = -1;   // -1 means empty stack
     }
     
     // create method to count the total size
     public int count()
     {
-        return stack.Length;
+        return top + 1;
     }
     
     // Push into the stack
     public void Push(T value)
     {
-        
+        if (top == stack.Length - 1)
+        {
+            Console.WriteLine("Stack is full!");
+        }
+        stack[top] =  value;
+        top++;
     }
     
     // Remove the top from stack
     public T Pop()
     {
+        if (top == -1)
+        {
+            Console.WriteLine("Stack is empty!");
+        }
+
+        --top;
         return stack[top];
+        
     }
     
     

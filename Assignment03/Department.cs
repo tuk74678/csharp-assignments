@@ -10,4 +10,24 @@ public class Department: IDepartmentService
     
     private Course[] _courses = new Course[5];
     private int _courseCount = 0;
+    
+    // Constructor
+    public Department(string name, decimal budget, DateTime startYear, DateTime endYear)
+    {
+        Name = name;
+        Budget = budget;
+        StartYear = startYear;
+        EndYear = endYear;
+    }
+    public void AddCourse(Course course)
+    {
+        if (_courseCount < _courses.Length)
+            _courses[_courseCount++] = course;
+    }
+
+    public void DisplayDepartmentInfo()
+    {
+        Console.WriteLine($"Department: {Name}, Budget: {Budget:C}, Head: {Head?.Name}");
+    }
+    
 }

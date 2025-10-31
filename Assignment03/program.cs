@@ -56,6 +56,9 @@ student.EnrollCourse(course2, 'B');
 dept.DisplayDepartmentInfo();
 instructor.DisplayInfo();
 student.DisplayInfo();
+
+// Color and Ball Classes
+
 // Create a method to generate number based on user input
 static int[] GenerateNumbers(int size, int min, int max)
 {

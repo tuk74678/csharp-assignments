@@ -6,14 +6,14 @@ public class MyStack<T>
     private int top;        // index that points to the top of the element
 
     // Create a constructor
-    public MyStack(int  capacity)
+    public MyStack(int capacity)
     {
         stack = new T[capacity];
         top = -1;   // -1 means empty stack
     }
     
     // create method to count the total size
-    public int count()
+    public int Count()
     {
         return top + 1;
     }
@@ -25,8 +25,8 @@ public class MyStack<T>
         {
             Console.WriteLine("Stack is full!");
         }
-        stack[top] =  value;
         top++;
+        stack[top] =  value;
     }
     
     // Remove the top from stack
@@ -36,10 +36,9 @@ public class MyStack<T>
         {
             Console.WriteLine("Stack is empty!");
         }
-
+        T popped = stack[top];
         --top;
-        return stack[top];
-        
+        return popped;
     }
     
     

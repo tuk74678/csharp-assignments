@@ -1,6 +1,6 @@
 ﻿namespace Assignment03;
 
-public class Student
+public class Student : Person, IStudentService
 {
     
 }

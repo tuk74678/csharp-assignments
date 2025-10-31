@@ -1,6 +1,6 @@
 ﻿namespace Assignment03;
 
-public interface IInstructorService
+public interface IInstructorService: IPersonService
 {
     
 }

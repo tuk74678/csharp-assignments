@@ -1,6 +1,6 @@
 ﻿namespace Assignment03;
 
-public interface IStudentService
+public interface IStudentService: IPersonService
 {
     
 }

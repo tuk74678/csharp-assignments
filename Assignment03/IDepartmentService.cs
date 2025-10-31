@@ -2,5 +2,5 @@
 
 public interface IDepartmentService
 {
-    
+    void DisplayDepartmentInfo();
 }

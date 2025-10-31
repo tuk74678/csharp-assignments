@@ -62,6 +62,12 @@ Console.WriteLine("\n\t*****Ball and Color OOP*****");
 // Create an instance of a class 
 var redColor = new Color(255, 0, 0);
 var ball = new Ball(5, redColor);
+
+ball.Throw();
+ball.Throw();
+ball.Pop();
+ball.Throw(); // won’t count
+Console.WriteLine($"Ball Color: {ball.Color}, Throw Count: {ball.GetThrowCount()}, Size: {ball.Size}");
 // Create a method to generate number based on user input
 static int[] GenerateNumbers(int size, int min, int max)
 {

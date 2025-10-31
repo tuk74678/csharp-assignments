@@ -2,5 +2,7 @@
 
 public interface IPersonService
 {
-    
+    void DisplayInfo();
+    decimal CalculateSalary();
+    int CalculateAge();
 }

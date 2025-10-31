@@ -1,6 +1,6 @@
 ﻿namespace Assignment03;
 
-public abstract class Person
+public abstract class Person : IPersonService
 {
     // use _ to avoid confusion when creating constructor
     private string _name;

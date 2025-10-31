@@ -1,6 +1,6 @@
 ﻿namespace Assignment03;
 
-public class Department
+public class Department: IDepartmentService
 {
     
 }

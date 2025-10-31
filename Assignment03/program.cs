@@ -32,8 +32,19 @@ Console.WriteLine();
 // OOP
 Console.WriteLine("\n\t*****Object-Oriented Programming*****");
 
-// Create instructor
+
 // Create student
+var student = new Student();
+
+// Create department
+var dept = new Department();
+
+// Create course
+var course = new Course();
+
+// Create instructor
+var instructor = new Instructor();
+
 
 // Create a method to generate number based on user input
 static int[] GenerateNumbers(int size, int min, int max)

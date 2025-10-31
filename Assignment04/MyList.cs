@@ -2,20 +2,29 @@
 
 public class MyList<T>
 {
+    private T[] array;
+    private int count;
+    
     // Constructor
-    public MyList()
+    public MyList(int capacity)
     {
-        
+        array = new T[capacity];
+        count = 0;
     }
-
+    
     public void Add(T element)
     {
-        
+        if (count == array.Length)
+        {
+            Console.WriteLine("Array is full!");
+        }
+        array[count] = element;
+        count++;
     }
 
     public T Remove(int index)
     {
-        return;
+        return ;
     }
 
     public bool Contains(T element)

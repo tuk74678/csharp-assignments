@@ -20,5 +20,16 @@ Console.WriteLine(new string('*', 50));
 // 2. Generic List
 Console.WriteLine("\t*****2. Generic List*****\n");
 
-// Create an instance of MyStack class
-MyList<int> myList = new MyList<int>();
+// Create an instance of MyStack class store int val
+MyList<int> integers = new MyList<int>(10);
+
+integers.Add(100);
+integers.Add(200);
+integers.Add(300);
+
+// Create an instance of MyStack class store strings
+MyList<string> strings = new MyList<string>(10);
+
+strings.Add("Toyota");
+strings.Add("Lexus");
+strings.Add("Honda");

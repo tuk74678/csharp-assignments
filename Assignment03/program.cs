@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using System.Runtime.InteropServices;
+using Assignment03;
 
 Console.WriteLine("\t***********ASSIGNMENT 03***********\n");
 
@@ -32,20 +33,29 @@ Console.WriteLine();
 // OOP
 Console.WriteLine("\n\t*****Object-Oriented Programming*****");
 
-
-// Create student
-var student = new Student("Harry Potter", new DateTime(1982, 03, 15));
-
 // Create department
-var dept = new Department();
+var dept = new Department("Computer Science", 100000, new DateTime(2025, 1, 1),
+    new DateTime(2026, 1, 1));
+// Create instructor
+var instructor = new Instructor("Dr. Logan Mcdonnell", new DateTime(1980, 5, 10), 80000m,
+    new DateTime(2010, 6, 1));
+dept.Head = instructor;
 
 // Create course
-var course = new Course();
+var course1 = new Course("OOP in C#");
+var course2 = new Course("Data Structures");
+dept.AddCourse(course1);
+dept.AddCourse(course2);
 
-// Create instructor
-var instructor = new Instructor();
+// Create student
+var student = new Student("Harry Potter", new DateTime(2003, 8, 15));
+student.EnrollCourse(course1, 'A');
+student.EnrollCourse(course2, 'B');
 
-
+// Display Information
+dept.DisplayDepartmentInfo();
+instructor.DisplayInfo();
+student.DisplayInfo();
 // Create a method to generate number based on user input
 static int[] GenerateNumbers(int size, int min, int max)
 {

@@ -18,16 +18,29 @@ public abstract class Person : IPersonService
     } 
     
     // get and set methods
-    public string Name { get; set;}
-    public DateTime DateOfBirth { get;  set;}
-    public decimal Salary { get; private set; }
-    public void SetSalary(decimal amount)
+    public string Name
     {
-        if (amount < 0)
-            throw new ArgumentException("Salary cannot be negative.");
-        Salary = amount;
-    }  
-    
+        get => _name;
+        set => _name = value;
+    }
+
+    public DateTime BirthDate
+    {
+        get => _dateOfBirth;
+        set => _dateOfBirth = value;
+    }
+
+    public decimal Salary
+    {
+        get => _salary;
+        set
+        {
+            if (value < 0)
+                throw new ArgumentException("Salary cannot be negative.");
+            _salary = value;
+        }
+    }
+
     public void AddAddress(string address)
     {
         if (_addressCount < _addresses.Length)

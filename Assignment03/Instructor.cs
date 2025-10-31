@@ -22,6 +22,7 @@ public class Instructor: Person, IInstructorService
         return base.CalculateSalary() + bonus;
     }
     
+    // Override method from base class
     public override void DisplayInfo()
     {
         Console.WriteLine($"Instructor: {Name}, Age: {CalculateAge()}, Salary: {CalculateSalary():C}, Experience: " +

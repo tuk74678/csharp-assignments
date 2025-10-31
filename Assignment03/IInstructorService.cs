@@ -2,5 +2,5 @@
 
 public interface IInstructorService: IPersonService
 {
-    int CalculateExperience();
+    int CalculateExperience();      // Calculate year of experience
 }

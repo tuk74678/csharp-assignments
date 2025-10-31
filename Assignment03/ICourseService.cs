@@ -2,5 +2,5 @@
 
 public interface ICourseService
 {
-    void DisplayCourseInfo();
+    void DisplayCourseInfo();       // Show course details
 }

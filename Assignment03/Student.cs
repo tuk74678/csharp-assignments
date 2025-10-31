@@ -12,6 +12,8 @@ public class Student : Person, IStudentService
     {
         
     }
+    
+    // Adds course
     public void EnrollCourse(Course course, char grade)
     {
         if (_courseCount < _courses.Length)
@@ -23,6 +25,7 @@ public class Student : Person, IStudentService
         }
     }
     
+    // Converts grades to GPA scale, override from base class
     public double CalculateGPA()
     {
         if (_courseCount == 0) return 0;
@@ -43,6 +46,7 @@ public class Student : Person, IStudentService
         return totalPoints / _courseCount;
     }
 
+    // Override method from base class
     public override void DisplayInfo()
     {
         Console.WriteLine($"Student: {Name}, Age: {CalculateAge()}, GPA: {CalculateGPA():F2}");

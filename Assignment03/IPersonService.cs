@@ -2,8 +2,8 @@
 
 public interface IPersonService
 {
-    void DisplayInfo();
-    decimal CalculateSalary();
-    int CalculateAge();
+    void DisplayInfo(); // Print person’s details
+    decimal CalculateSalary();  // Compute salary
+    int CalculateAge();     // Compute current age
     
 }

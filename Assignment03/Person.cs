@@ -1,5 +1,9 @@
 ﻿namespace Assignment03;
 
+// Abstract base class represent generic person(base for student and instructor).
+// Use 4 principles of OOP: Encapsulation, Abstraction, Inheritance, Polymorphism
+// Define a general template for people.
+
 public abstract class Person : IPersonService
 {
     // use _ to avoid confusion when creating constructor
@@ -54,7 +58,9 @@ public abstract class Person : IPersonService
     }
     public int CalculateAge() => DateTime.Now.Year - _dateOfBirth.Year;
     
+    // Example of polymorphism 
     public virtual decimal CalculateSalary() => Salary;
 
+    // Example of polymorphism
     public abstract void DisplayInfo();
 }

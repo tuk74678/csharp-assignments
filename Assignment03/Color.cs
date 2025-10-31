@@ -16,4 +16,7 @@ public class Color
         Blue = blue;
         Alpha = alpha;
     }
+    public double GetGrayScale() => (Red + Green + Blue) / 3.0;
+
+    public override string ToString() => $"RGBA({Red}, {Green}, {Blue}, {Alpha})";
 }

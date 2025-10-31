@@ -61,6 +61,7 @@ student.DisplayInfo();
 Console.WriteLine("\n\t*****Ball and Color OOP*****");
 // Create an instance of a class 
 var redColor = new Color(255, 0, 0);
+var ball = new Ball(5, redColor);
 // Create a method to generate number based on user input
 static int[] GenerateNumbers(int size, int min, int max)
 {

@@ -40,7 +40,7 @@ public abstract class Person : IPersonService
             Console.WriteLine($"Address {i + 1}: {_addresses[i]}");
     }
     public int CalculateAge() => DateTime.Now.Year - _dateOfBirth.Year;
-
+    
     public virtual decimal CalculateSalary() => Salary;
 
     public abstract void DisplayInfo();

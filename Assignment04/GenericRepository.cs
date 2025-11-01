@@ -16,12 +16,16 @@ public class GenericRepository<T>: IRepository<T> where T : Entity
 
     public void Remove(T item)
     {
-        throw new NotImplementedException();
+        if (item == null)
+            throw new ArgumentNullException(nameof(item));
+        items.Remove(item);
+        Console.WriteLine($"Removed item with Id={item.Id}");
     }
 
     public void Save()
     {
-        throw new NotImplementedException();
+        // save logic
+        Console.WriteLine("Changes saved.");
     }
 
     public IEnumerable<T> GetAll()

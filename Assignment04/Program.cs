@@ -62,6 +62,7 @@ var repo = new GenericRepository<Entity>();
 repo.Add(new Entity {Id = 1});
 repo.Add(new Entity { Id = 2 });
 
+repo.Remove(new Entity { Id = 2 });
 
 
 

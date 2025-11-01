@@ -54,3 +54,13 @@ strings.InsertAt("Volvo", 2);
 Console.WriteLine("Removing an element....");
 strings.DeleteAt(0);
 Console.WriteLine($"Found an element at the given index: {strings.Find(1)}");
+
+// 3. Generic Repository
+Console.WriteLine("\t*****2. Generic Repository*****");
+
+
+
+
+
+
+

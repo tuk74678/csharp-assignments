@@ -56,8 +56,11 @@ strings.DeleteAt(0);
 Console.WriteLine($"Found an element at the given index: {strings.Find(1)}");
 
 // 3. Generic Repository
-Console.WriteLine("\t*****2. Generic Repository*****");
+Console.WriteLine("\t*****3. Generic Repository*****");
+var repo = new GenericRepository<Entity>();
 
+repo.Add(new Entity {Id = 1});
+repo.Add(new Entity { Id = 2 });
 
 
 

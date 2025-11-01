@@ -1,13 +1,20 @@
 ﻿namespace Assignment04;
 
-public class GenericRepository<T>: IRepository<Entity>
+public class GenericRepository<T>: IRepository<T> where T : Entity
 {
-    public void Add(Entity item)
+    private readonly List<T> items = new List<T>();        // use readonly to ensure variable reference cannot be reassigned 
+    
+    public void Add(T item)
     {
-        throw new NotImplementedException();
+        if (item == null)
+        {
+            throw new ArgumentNullException(nameof(item));
+        }
+        items.Add(item);
+        Console.WriteLine($"Added item with Id={item.Id}");
     }
 
-    public void Remove(Entity item)
+    public void Remove(T item)
     {
         throw new NotImplementedException();
     }
@@ -17,12 +24,12 @@ public class GenericRepository<T>: IRepository<Entity>
         throw new NotImplementedException();
     }
 
-    public IEnumerable<Entity> GetAll()
+    public IEnumerable<T> GetAll()
     {
         throw new NotImplementedException();
     }
 
-    public Entity GetById(int id)
+    public T GetById(int id)
     {
         throw new NotImplementedException();
     }

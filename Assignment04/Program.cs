@@ -49,4 +49,7 @@ strings.Clear();
 Console.WriteLine("Clearing the array.....");
 Console.WriteLine($"After clearing the array, now array has: {strings.Count()} element.");
 strings.InsertAt("BMW", 0);
-
+strings.InsertAt("Porsche", 1);
+strings.InsertAt("Volvo", 2);
+Console.WriteLine("Removing an element....");
+strings.DeleteAt(0);

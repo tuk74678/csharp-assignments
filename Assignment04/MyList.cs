@@ -83,12 +83,12 @@ public class MyList<T>
 
     public void DeleteAt(int index)
     {
-        
+        Remove(index);
     }
 
-    // public T Find(int index)
-    // {
-    //     
-    // }
+    public T Find(int index)
+    {
+        
+    }
     
 }

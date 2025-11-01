@@ -60,13 +60,25 @@ public class MyList<T>
 
     public void Clear()
     {
+        // Using Array.Clear to logical remove all elements in the array
         Array.Clear(array, 0, count);
         count = 0;
     }
 
     public void InsertAt(T element, int index)
     {
-        
+        if (index < 0 || index > count)
+        {
+            throw new ArgumentOutOfRangeException("Index out of range");
+        }
+
+        for (int i = count; i > index; i--)
+        {
+            // move an element to the right
+            array[i] = array[i - 1];
+        }        
+        array[index] = element;
+        count++;
     }
 
     public void DeleteAt(int index)

@@ -48,3 +48,5 @@ Console.WriteLine($"Array has {strings.Count()} elements.");
 strings.Clear();
 Console.WriteLine("Clearing the array.....");
 Console.WriteLine($"After clearing the array, now array has: {strings.Count()} element.");
+strings.InsertAt("BMW", 0);
+

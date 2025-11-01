@@ -53,3 +53,4 @@ strings.InsertAt("Porsche", 1);
 strings.InsertAt("Volvo", 2);
 Console.WriteLine("Removing an element....");
 strings.DeleteAt(0);
+Console.WriteLine($"Found an element at the given index: {strings.Find(1)}");

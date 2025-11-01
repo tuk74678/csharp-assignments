@@ -88,7 +88,8 @@ public class MyList<T>
 
     public T Find(int index)
     {
-        
+        if (index < 0 || index >= count) throw new ArgumentOutOfRangeException();
+        return array[index];
     }
     
 }

@@ -64,6 +64,11 @@ repo.Add(new Entity { Id = 2 });
 
 repo.Remove(new Entity { Id = 2 });
 
+Console.WriteLine("All Persons:");
+foreach (var p in repo.GetAll())
+{
+    Console.WriteLine($"{p.Id}");
+} 
 
 
 

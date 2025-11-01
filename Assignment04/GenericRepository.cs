@@ -30,7 +30,7 @@ public class GenericRepository<T>: IRepository<T> where T : Entity
 
     public IEnumerable<T> GetAll()
     {
-        throw new NotImplementedException();
+        return items.ToList(); // return a copy to prevent external modification
     }
 
     public T GetById(int id)

@@ -1,6 +1,7 @@
 ﻿namespace Assignment04;
 
-public class Entity
+// Create an abstract class to avoid unwanted modifications
+public abstract class Entity
 {
     public int Id { get; set; }
 }

@@ -47,7 +47,15 @@ public class MyList<T>
 
     public bool Contains(T element)
     {
-        return true;
+        for (int i = 0; i < count - 1; i++)
+        {
+            if (array[i].Equals(element))
+            {
+                return true;
+            }
+           
+        }
+        return false;
     }
 
     public void Clear()

@@ -26,8 +26,9 @@ MyList<int> integers = new MyList<int>(10);
 integers.Add(100);
 integers.Add(200);
 integers.Add(300);
+Console.WriteLine(integers.Contains(100));          // this should return true
+Console.WriteLine(integers.Contains(500));          // this should return false
 Console.Write($"You have removed {integers.Remove(1)} \n");
-
 
 // Create an instance of MyStack class store strings
 MyList<string> strings = new MyList<string>(10);
@@ -35,4 +36,6 @@ MyList<string> strings = new MyList<string>(10);
 strings.Add("Toyota");
 strings.Add("Lexus");
 strings.Add("Honda");
+Console.WriteLine(strings.Contains("Toyota"));          // this should return true
+Console.WriteLine(strings.Contains("Mercedes"));          // this should return false
 Console.Write($"You have removed {strings.Remove(1)} \n");

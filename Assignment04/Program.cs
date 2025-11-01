@@ -18,24 +18,33 @@ Console.WriteLine($"There are {stack.Count()} elements in the stack.");
 Console.WriteLine(new string('*', 50));
 
 // 2. Generic List
-Console.WriteLine("\t*****2. Generic List*****\n");
+Console.WriteLine("\t*****2. Generic List*****");
 
 // Create an instance of MyStack class store int val
 MyList<int> integers = new MyList<int>(10);
-
+Console.WriteLine("\tTesting with Integers");
 integers.Add(100);
 integers.Add(200);
 integers.Add(300);
+Console.WriteLine($"Starting array has {integers.Count()} elements.");
 Console.WriteLine(integers.Contains(100));          // this should return true
 Console.WriteLine(integers.Contains(500));          // this should return false
 Console.Write($"You have removed {integers.Remove(1)} \n");
+Console.WriteLine($"Array has {integers.Count()} elements.");
+
+Console.WriteLine(new string('*', 50));
 
 // Create an instance of MyStack class store strings
 MyList<string> strings = new MyList<string>(10);
-
+Console.WriteLine("\tTesting with Strings");
 strings.Add("Toyota");
 strings.Add("Lexus");
 strings.Add("Honda");
+Console.WriteLine($"Starting array has {strings.Count()} elements.");
 Console.WriteLine(strings.Contains("Toyota"));          // this should return true
 Console.WriteLine(strings.Contains("Mercedes"));          // this should return false
 Console.Write($"You have removed {strings.Remove(1)} \n");
+Console.WriteLine($"Array has {strings.Count()} elements.");
+strings.Clear();
+Console.WriteLine("Clearing the array.....");
+Console.WriteLine($"After clearing the array, now array has: {strings.Count()} element.");

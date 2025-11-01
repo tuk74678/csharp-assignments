@@ -60,7 +60,8 @@ public class MyList<T>
 
     public void Clear()
     {
-        
+        Array.Clear(array, 0, count);
+        count = 0;
     }
 
     public void InsertAt(T element, int index)

@@ -69,7 +69,7 @@ foreach (var p in repo.GetAll())
 {
     Console.WriteLine($"{p.Id}");
 } 
-
-
+var item = repo.GetById(1);
+Console.WriteLine($"Get by Id : {item.Id}");
 
 

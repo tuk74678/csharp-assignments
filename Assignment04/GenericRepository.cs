@@ -35,6 +35,6 @@ public class GenericRepository<T>: IRepository<T> where T : Entity
 
     public T GetById(int id)
     {
-        throw new NotImplementedException();
+        return items.FirstOrDefault(x => x.Id == id);
     }
 }

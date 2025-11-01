@@ -26,6 +26,8 @@ MyList<int> integers = new MyList<int>(10);
 integers.Add(100);
 integers.Add(200);
 integers.Add(300);
+Console.Write($"You have removed {integers.Remove(1)} \n");
+
 
 // Create an instance of MyStack class store strings
 MyList<string> strings = new MyList<string>(10);
@@ -33,3 +35,4 @@ MyList<string> strings = new MyList<string>(10);
 strings.Add("Toyota");
 strings.Add("Lexus");
 strings.Add("Honda");
+Console.Write($"You have removed {strings.Remove(1)} \n");

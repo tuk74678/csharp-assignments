@@ -11,12 +11,18 @@ public class MyList<T>
         array = new T[capacity];
         count = 0;
     }
+
+    // Use Count() to get the array size
+    public int Count()
+    {
+        return count;
+    }
     
     public void Add(T element)
     {
         if (count == array.Length)
         {
-            Console.WriteLine("Array is full!");
+            throw new ArgumentOutOfRangeException("Index out of range");
         }
         array[count] = element;
         count++;
@@ -24,7 +30,19 @@ public class MyList<T>
 
     public T Remove(int index)
     {
-        return ;
+        // Check if the provided index is valid otherwise print message
+        if (index < 0 || index >= count)
+        {
+            throw new ArgumentOutOfRangeException("Index out of range");
+        }
+
+        T removed = array[index];
+        for (int i = index; i < count - 1; i++)
+        {
+            array[i] = array[i + 1];
+        }
+        count--;
+        return removed;
     }
 
     public bool Contains(T element)
@@ -47,9 +65,9 @@ public class MyList<T>
         
     }
 
-    public T Find(int index)
-    {
-        
-    }
+    // public T Find(int index)
+    // {
+    //     
+    // }
     
 }

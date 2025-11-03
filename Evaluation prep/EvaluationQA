@@ -1,0 +1,260 @@
+	SQL Prep:
+
+	1. What is index; types of indices; pros and 
+		on disk structure and db object that increases teh data retrieval speed from a table SELECT.
+		Clustered Index → rearranges the physical order of rows (only 1 per table, usually on the primary key).
+
+		Non-Clustered Index → separate structure, stores pointers to data rows.
+		Pros: Faster SELECT queries, improved joins.
+
+		Cons: Slower INSERT/UPDATE/DELETE, uses extra storage.
+		
+	2. What's the difference between Primary key and Unique constraint?
+	
+		- UNique constraint can accept one and only null value, but PK cannot accept any null value.
+		- One table can have multiple unique keys but only one primary key.
+		- PK will sort the dat by default, but unique key will not.
+		- PK will create a clusterd index by default and unique key will create a non-clustered.
+
+	3. Tell me about check constraint
+		Used to restrict values in a column.
+
+	4. Difference between temp table and table variable
+		- Temp table: special type of table that we can store the data temporarily. @ is the identifier
+			- Stored in TempDB
+			- Lifescope is session
+			- Supports Index
+			- Better for large data.
+		- Table variable: A variable which is of table types.
+			- Same lifescope of regular variable.
+			- The lifescope of this is limited to the same batch, stored procedure.
+			- Limited Index support.
+	
+	5. Difference between WHERE and HAVING
+	
+		- WHERE filters rows before grouping.
+		- HAVING filters groups after aggregation.
+
+	6. Difference between RANK() and DenseRank() — value gap
+	
+		- RANK() give rank based on certain order.
+		- DENSE_RANK() is used when you dont want a value gap.
+
+	7. COUNT(*) vs. COUNT(colName)
+	
+		Count(*) : counts all rows including nulls
+		Count(column); counts only non-null values
+
+	8. What's the difference between left join and inner join? JOIN and Subquery, which one has a
+
+	better performance, why?
+		- INNER JOIN: only matching rows.
+		- LEFT JOIN: all rows from left, matcing from right
+		Performance: 
+			- JOINs are usually faster than subqueries. (Optimized by SQL engine)
+		
+	
+
+	9. What is correlated subquery?
+		- A subquery that depends on the outer query.
+
+	10. What is a CTE, why do we need CTE?
+		- It is a Common Table Expression. Temporary result set defined within a query for readability
+		- Used for recursion, readability and reusing subqueries.
+
+	11. What does SQL Profiler do?
+		- SQL Profiler is tool to monitor, trace and analyze SQL Server Events(like slow queries, deadlocks)
+
+	12. What is SQL injection, how to avoid SQL injection?
+		_ SQL Injection occurs when hackers inject some malicious codes into our SQL quesries and thus destroying our database.
+		- To avoid SQL Injection: we can use parameterized queries or stored procedure.
+
+	13. Difference between SP and user defined function? When to use SP when to use function?
+		- SP uses in DML, but UDF use for calculation logics.
+		- For SP we can use EXEC to call but UDF we use it in SQL statement.
+		- SP may or may not have input and output. UDF may or may not have input but must have output.
+
+	14. Criteria of Union and Union all? Difference between UNION and UNION ALL
+		- UNION : removes duplicates
+		- UNION ALL: keeps duplicates
+		Both require same number/type of columns.
+
+	15. Steps you take to improve SQL Queries
+		- Look at the execution plan/ SQL profiler.
+		- Create index wisely.
+		- Avoid using unnecessary JOIN.
+		- Avoid using SELECT *
+		- Use a derived table to avoid grouping of lots of non-agg table
+		- Use JOIN to replace subqueries.
+
+	16. concurrency problem in transaction
+		- Concurrency problem is when two or more users are trying to access the same data.
+			- Dirty Read: Read uncommitted data.
+			- Phantom Read: New rows appear.
+			- Lost Update: Two updates overwrite.
+		Use Transaction Isolation Levels.
+
+	17. what is deadlock, how to prevent
+		- Deadlock occurs when two transactions wait for each other indefinitely.
+		- To prevent it: we can access resources in same order, and keep transactions short.
+
+	18. what is normalization, 1NF, benefits using normalization
+		- Normalization is a process of designing database to minimize data redundancy which in turn ensures data consistency.
+			- 1NF : No repeating groups, atomic values.
+			- Benefit: Efficient storage and consistency.
+
+	19. what are the system defined databases?
+		- There are: master, model, msdb, tempdb
+
+	20. composite key
+		- Composite working with two tables maintaining many-many relationships.
+		- Junction table.
+
+	21. candidate key
+		- Any column or group that can uniquely identify a row(potential PK)
+
+	22. DDL vs. DML
+		- DDL is data definition(CREATE, ALTER, DROP)
+		- DML is data manipulation (SELECT, INSERT, UPDATE, DELETE)
+
+	23. ACID property:
+		- Atomicity: work must be atomic. Either all work is done or rollback.
+		- Consistency: whatever happens in the middle of the transaction, this property 
+			will never leave db in haldf completed state.
+		- Isolations: two transactions will be isolated from each other by locking the resource. 
+		- Durability: once transaction completed, the changes made for db will be permanent.
+
+	24. table scan vs. index scan
+		
+		- Table Scan: reads all rows -> slower.
+		- Index ScanL reads index -> faster
+		
+	25. Difference between Union and JOIN
+		- UNION combines rows (vertical).
+		- JOIN combines columns (horizontal).
+
+	26. Examples of one-one, one-many, many-many relationships; how can we create such relationships in db
+		- One-to-One: Person-Passport ---> Unique foreign key.
+		- One-to-Many: Dept-Employees ---> Foreign key in child
+		- Many-to-Many: Students-Courses ---> Junction table.
+
+	C# Prep:
+
+	1. reference type vs. value type
+	
+		- Referennce type: 
+			- hold the memory address, or reference of the value.
+			- stored in heap memory.
+			- will be collected by the garbage collector.
+			- can be created by class interface, delegate, or array.
+			can accept null value.
+		- Value type: 
+			- directly hold the value.
+			- stored in stack memory.
+			- will not colelcted by the garbage collector.
+			- can be created by struct or enum.
+			- cannot accept any null value.
+
+	2. boxing vs. unboxing
+		- Boxing is an operation that converts a value type to the reference type(object type).
+		- Unboxing is an operation that converts a reference type to the value type.
+
+	3. walk us through the four principles of OOP with examples, focus on what does the principle mean, why do we need to use that, examples of us that
+		
+		- There are 4 main pillars of OOP:
+			- Encapsulation: hide data from the outside world.
+			- Inheritance: reuse behavior
+			- Polymorphism: many forms(virtual, override)
+			- Abstraction: hid complex logic using abstract/interface
+		
+		follow-up:
+
+		1. different access modifiers: public, private, protected, internal
+	
+		2. overriding vs. overloading, which one is runtime and which one is compile time
+			- overloading: same name, different params -> compile-time.
+			- overridding: subclass modifies base -> runtime
+			
+		3. can we have multiple inheritance in C#
+			- we cannot have multiple inheritance but we can have multiple interface
+
+		4. virtual method vs. abstract method
+			- virtual -> can override (optional)
+			- abstract -> must override.
+
+		5. difference between abstract class and interface, when to use which one 
+			- Abstract class will provide a base class to its subclasses. It is a wise choice when we have a class hierachy
+			  , but an interface will define some commonn behavior or functionalities that can be implemented by any class.
+			- One class can only inherit from one abstract or concrete class but one class can implement multiple interfaces.
+			- Methods in an abstract class can be abstract method or non-abstract method. But for method in an interface, they
+			  by default public and abstract.
+
+	4. What does constructor do in a class? Can it be overridden? Can it be overloaded?
+			- Constructor is a special method which shares the same name of the classs and doesn't have any return types , not even void.
+			- It is used to create an object of the classs and initialize class members.
+			- Constructor can be overloaded which means the method can have the same name but different parameter.
+			- Constructor can't be overrided which means it cannot be inherited.
+			
+	5. What does static keyword do in C#?
+			- Static are members that belong to the class itself instead of any instance.
+
+	6. what are delegates in C#, what are different types of built-in delegates
+			- Delegates are a type safe function pointer that takes a function or method as a parameter. It creates a reference type.
+			- There are 3 types such as:
+				- Action(return void as parameter)
+				- Predicate: It will take functions that have generic input but returns a boolean value as a parameter.
+				- Func: It will take functions that has generic input and will return a generic value as a parameter.
+
+	7. What is the extension method in C#? examples of built-in extension methods? How to create custom extension methods?
+			- Extension methods: allows us to add functionality to the existing type without modifying, deriving and recompiling the original class.
+			- Use lambda operator to return a result. 
+	
+	8. Ref vs. Out vs. Params
+			- ref: pass initialized variable.
+			- out: mnust be assigned inside method.
+			- params: variable number of arguments.
+
+	9. Pass by reference vs. Pass by Value
+			- value -> copy passed
+			- reference -> original modified
+
+	10. array vs. arrayList
+			- array: fixed size, and type-safe.
+			- arrayList: dynamic,and not type-safe.
+
+	11. how do you handle exceptions? Syntax.
+			- To handle exceptions, we can use try catch block following with exceptions and finally
+
+	12. what is generic, syntax to define, how can we limit the implementation of generics 
+			- Generic is used to create type-safe reusable code. It allows us to design classes or method but defer the specification of type until 
+			  the class or method is declared. 
+			- We can limit the implementation of generics by using constraints where.
+
+	13. Generic Collection vs. non-generic collection
+			- Generic(List<T>): type-safe, faster.
+			- Generic(ArrayList): needs casting, slower.
+
+	14. What is LINQ, why use it
+			- LINQ: (Language Integrated Query) used to query collections easilty.
+
+	15. IEnumreable vs. IQuerable
+			- IEnumerable: in-memory, executes in app, and uses LINQ to objects.
+			- IQueryable: database, executes on sever, uses LINQ to SQL.
+
+	16. First, FirstOrDefault, Single, SingleOrDefault
+			- First(): Throw on empty, dont throw on mutiple.
+			- FirstOrDefault(): dont throw on empty, nor throw on multiple.
+			- Single(): throw on empty, and throw on multiple.
+			- SingleOrDeafult(): dont throw on empty, but throw on multiple.
+
+	17. Any() vs. All()
+			- Any(): true if at least one element satisfies.
+			- All(): true if every element satisfies.
+
+	18. How to implement pagination in LINQ (answer is to use Skip() and Take())
+			- var result = students.Skip(10).Take(10);
+			- This is called pagination — splitting the data into pages.
+
+	19. Deferred Execution and Immediate Execution
+			- Deferred -> query runs when iterated(IEnumerable).
+			- Immediate -> executes immediately(ToList(), Count()).
